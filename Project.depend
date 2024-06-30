@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1719776544 source:c:\users\irbis\desktop\lab03\project\main.cpp
+	"histogram.h"
+	<vector>
+	<iostream>
+	<algorithm>
+	<cmath>
+	<iomanip>
+	<numeric>
+
+1719777102 c:\users\irbis\desktop\lab03\project\histogram.h
+	<vector>
+	<algorithm>
+	<numeric>
+
+1719779287 source:c:\users\irbis\desktop\lab03\project\histogram.cpp
+	"histogram.h"
+	<vector>
+	<algorithm>
+	<numeric>
+

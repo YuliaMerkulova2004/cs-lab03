@@ -1,6 +1,7 @@
 # depslib dependency file v1.0
-1719776544 source:c:\users\irbis\desktop\lab03\project\main.cpp
+1719845842 source:c:\users\irbis\desktop\lab03\project\main.cpp
 	"histogram.h"
+	"svg.h"
 	<vector>
 	<iostream>
 	<algorithm>
@@ -18,4 +19,11 @@
 	<vector>
 	<algorithm>
 	<numeric>
+
+1719846601 c:\users\irbis\desktop\lab03\project\svg.h
+	<iostream>
+	<vector>
+	<algorithm>
+	<numeric>
+	<cmath>
 

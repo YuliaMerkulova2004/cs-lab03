@@ -20,7 +20,12 @@
 	<algorithm>
 	<numeric>
 
-1719846601 c:\users\irbis\desktop\lab03\project\svg.h
+1719849477 c:\users\irbis\desktop\lab03\project\svg.h
+	<iostream>
+	<vector>
+
+1719849354 source:c:\users\irbis\desktop\lab03\project\svg.cpp
+	"svg.h"
 	<iostream>
 	<vector>
 	<algorithm>

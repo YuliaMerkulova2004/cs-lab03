@@ -23,12 +23,23 @@ void svg_text(double left, double baseline, string text) {
     cout << "<text x='" << left << "' y='" << baseline << "'>" << text << "</text>";
 }
 
-void svg_rect(double x, double y, double width, double height, string stroke = "green", string fill = "green") {
+void svg_rect(double x, double y, double width, double height, string stroke, string fill) {
     cout << "<rect x='" << x << "' y='" << y << "' width='" << width << "' height='" << height << "' stroke='" << stroke << "' fill='" << fill << "' />";
 }
 
 size_t max_count(const vector<size_t>& bins) {
     return *max_element(bins.begin(), bins.end());
+}
+
+void draw_histogram_bar(double x, double y, double width, double height, size_t bin_value, size_t average_height, string& stroke, string& fill) {
+    if (bin_value > average_height) {
+        stroke = "red";
+        fill = "red";
+    } else {
+        stroke = "green";
+        fill = "green";
+    }
+    svg_rect(x, y, width, height, stroke, fill);
 }
 
 void show_histogram_svg(const vector<size_t>& bins) {
@@ -48,26 +59,19 @@ void show_histogram_svg(const vector<size_t>& bins) {
 
     svg_begin(IMAGE_WIDTH, IMAGE_HEIGHT);
     double top = 0;
+    string stroke, fill;
     if (max_value > MAX_LEN) {
         for (size_t bin : bins) {
             const double bin_width = BLOCK_WIDTH * static_cast<double>(bin) * MAX_LEN / max_value;
             svg_text(TEXT_LEFT, top + TEXT_BASELINE, to_string(bin));
-            if (bin > average_height) {
-                svg_rect(TEXT_WIDTH, top, bin_width, BIN_HEIGHT, "red", "red");
-            } else {
-                svg_rect(TEXT_WIDTH, top, bin_width, BIN_HEIGHT);
-            }
+            draw_histogram_bar(TEXT_WIDTH, top, bin_width, BIN_HEIGHT, bin, average_height, stroke, fill);
             top += BIN_HEIGHT;
         }
     } else {
         for (size_t bin : bins) {
             const double bin_width = BLOCK_WIDTH * bin;
             svg_text(TEXT_LEFT, top + TEXT_BASELINE, to_string(bin));
-            if (bin > average_height) {
-                svg_rect(TEXT_WIDTH, top, bin_width, BIN_HEIGHT, "red", "red");
-            } else {
-                svg_rect(TEXT_WIDTH, top, bin_width, BIN_HEIGHT);
-            }
+            draw_histogram_bar(TEXT_WIDTH, top, bin_width, BIN_HEIGHT, bin, average_height, stroke, fill);
             top += BIN_HEIGHT;
         }
     }

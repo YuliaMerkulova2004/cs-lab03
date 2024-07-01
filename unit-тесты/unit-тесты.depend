@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1719866674 source:c:\users\irbis\desktop\lab03\project\svg.cpp
+	"svg.h"
+	<iostream>
+	<vector>
+	<algorithm>
+	<numeric>
+	<cmath>
+
+1719865727 c:\users\irbis\desktop\lab03\project\svg.h
+	<iostream>
+	<vector>
+
+1719866674 source:c:\users\irbis\desktop\lab03\project\unit-test.cpp
+	"svg.h"
+	<cassert>
+	<string>
+
